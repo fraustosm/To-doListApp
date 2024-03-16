@@ -5,7 +5,7 @@
 }
 
 body { 
-    background: rgb(0,0,0);
+    background: rgb(174, 159, 224);
     background: aliceblue;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -13,13 +13,13 @@ body {
   }
 
 #todo-container {
-    background: rgb(41, 33, 33);
+    background: rgb(167, 196, 226);
     width: 400px;
     margin: 0 auto;
-    border: 2px solid #0033ff;
-    padding: 20px;
+    border: 2px solid #c8cad3;
+    padding: 50px;
     color: white;
-    border-radius: 15px;
+    border-radius: 20px;
   }
 
   #header {
@@ -48,11 +48,11 @@ body {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #2e60ea;
+    background-color: #979ba6;
   }
   
   #input-button:hover {
-    background-color: #9eb7fd; 
+    background-color: #b6c4eb; 
   }
   
   ul {
