@@ -27,6 +27,7 @@ function addTask() {
 
     checkbox.addEventListener("click", function() {
         li.classList.toggle("completed", checkbox.checked);
+        updateCounters();
     });
 
     editBtn.addEventListener("click", function() {
@@ -34,10 +35,26 @@ function addTask() {
         if (update !== null) {
             taskSpan.textContent = update;
             li.classList.remove("completed");
+            checkbox.checked = false;
+            updateCounters();
         }
     });
     
     deleteBtn.addEventListener("click", function() {
+        if (confirm("Are yoy sure you want to delete this task?")){
         li.remove();
+        updateCounters();
+        }
     });
+}
+    const completedCounter = document.getElementById("completed-counter");
+    const uncompletedCounter = document.getElementById("uncompleted-counter");
+
+function updateCounters() {
+    const completedTasks = document.querySelectorAll(".completed").length;
+    const uncompletedTasks = document.querySelectorAll("li:not(.completed)").length;
+
+    completedCounter.textContent = completedTasks;
+    uncompletedCounter.textContent = uncompletedTasks;
+
 }
