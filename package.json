@@ -21,6 +21,8 @@
     "bcrypt": "^6.0.0",
     "express": "^5.1.0",
     "express-session": "^1.18.1",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.15.1",
     "qrcode": "^1.5.4",
     "speakeasy": "^2.0.0"
   }

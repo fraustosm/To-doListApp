@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi To-Do Segura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button id="logout-btn" style="float: right;">Cerrar sesión</button>
+    <div id="todo-container">
+        <h1>To-Do List</h1>
+        <input type="text" id="input-box" placeholder="Añade una tarea">
+        <button id="input-button">Añadir</button>
+        <ul id="list-container"></ul>
+        <div class="counter-container">
+            Completadas: <span id="completed-counter">0</span> |
+            Pendientes: <span id="uncompleted-counter">0</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Verificar autenticación al cargar
+        fetch("/check-auth")
+            .then(res => res.json())
+            .then(data => {
+                if (!data.isAuthenticated) {
+                    window.location.href = "/";
+                }
+            });
+
+        // Cerrar sesión
+        document.getElementById("logout-btn").addEventListener("click", () => {
+            fetch("/logout", { method: "POST" })
+                .then(() => window.location.href = "/");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - To-Do MFA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Contenedor de Login -->
+    <div id="login-container" class="auth-container">
+        <h1>Login</h1>
+        <input type="text" id="login-username" placeholder="Usuario">
+        <input type="password" id="login-password" placeholder="Contraseña">
+        <button onclick="login()">Ingresar</button>
+        <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+    </div>
+
+    <!-- Contenedor de Registro -->
+    <div id="register-container" class="auth-container" style="display: none;">
+        <h1>Registro</h1>
+        <input type="text" id="reg-username" placeholder="Usuario">
+        <input type="password" id="reg-password" placeholder="Contraseña">
+        <button onclick="register()">Registrarse</button>
+        <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Inicia sesión</a></p>
+    </div>
+
+    <!-- Configuración MFA (post-registro) -->
+    <div id="mfa-setup-container" class="auth-container" style="display: none;">
+        <h1>Configura MFA</h1>
+        <p>Escanea este QR con Google Authenticator:</p>
+        <img id="qrcode" />
+        <p>O ingresa este código manualmente: <strong id="mfa-secret"></strong></p>
+        <button onclick="window.location.href = '/'">Continuar al Login</button>
+    </div>
+
+    <!-- Verificación MFA (post-login) -->
+    <div id="mfa-verify-container" class="auth-container" style="display: none;">
+        <h1>Verifica tu identidad</h1>
+        <p>Ingresa el código de Google Authenticator:</p>
+        <input type="text" id="mfa-code" placeholder="Código de 6 dígitos">
+        <button onclick="verifyMFA()">Verificar</button>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

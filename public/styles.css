@@ -1,0 +1,68 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: aliceblue;
+    margin: 0;
+    padding: 20px;
+}
+
+.auth-container, #todo-container {
+    background: rgb(167, 196, 226);
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    background: #979ba6;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    background: #b6c4eb;
+}
+
+/* Estilos del To-Do */
+#todo-container {
+    text-align: left;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    cursor: pointer;
+}
+
+.counter-container {
+    margin-top: 10px;
+    font-size: 14px;
+}
