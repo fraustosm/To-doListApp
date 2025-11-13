@@ -18,21 +18,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // Verificar autenticación al cargar
-        fetch("/check-auth")
-            .then(res => res.json())
-            .then(data => {
-                if (!data.isAuthenticated) {
-                    window.location.href = "/";
-                }
-            });
-
-        // Cerrar sesión
-        document.getElementById("logout-btn").addEventListener("click", () => {
-            fetch("/logout", { method: "POST" })
-                .then(() => window.location.href = "/");
-        });
-    </script>
+    
 </body>
 </html>
